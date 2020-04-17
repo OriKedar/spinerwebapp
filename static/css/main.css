@@ -7,10 +7,12 @@ body, html {
     font-size: 14px;    
 }
 
-
+p {
+    text-align: center;
+}
 .content {
     margin: 0 auto;
-    width: 600px;
+    width: 80%;
     }
 
 table, td, th {
@@ -56,4 +58,9 @@ a {
 
 a:hover {
     color: red;
+}
+
+h3 {
+    position: relative;
+    top: 12px;
 }
