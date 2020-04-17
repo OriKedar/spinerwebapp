@@ -1,0 +1,59 @@
+body, html {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: rgb(39, 38, 38);
+    color: antiquewhite;
+    font-family: 'Press start 2p', 'sens-serif';
+    font-size: 14px;    
+}
+
+
+.content {
+    margin: 0 auto;
+    width: 600px;
+    }
+
+table, td, th {
+    border: 2px solid #aaa;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    position: relative;
+}
+
+th {
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+    margin: 55px;
+    height: auto;
+}
+
+.form {
+    align-items: center;
+    width: 400px;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+
+#content {
+    width: 80%;
+}
+
+#artist {
+    width: 80%
+}
+
+a {
+    color: blue;
+    margin: 5px;
+}
+
+a:hover {
+    color: red;
+}

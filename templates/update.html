@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Task Master</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Update Task</h1>
+
+    <div class="form">
+        <form action="/update/{{record.id}}" method="POST">
+            Record Name: <input type="text" name="content" id="content" required value="{{record.content}}">
+            <br></br>
+            Artist: <input type="text" name="artist" id="artist" required value="{{record.artist}}">
+            <br></br>
+            <input type="submit" value="Update">
+            
+        </form>
+    </div>
+</div>
+{% endblock %}

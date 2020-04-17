@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head%}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+</style> 
+<title>Records Master</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Record Master</h1>
+    <p>Welcome to the Record Master app, here you can choose and manage your records</p>
+    {% if records| length < 1 %}
+    <h4 style="text-align: center">There are no tasks. create one below.</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Record</th>
+            <th>Artist</th>
+            <th>Actions</th>
+        </tr>
+        {% for record in records %}
+            <tr>
+                <td>{{ record.content }}</td>
+                <td>{{ record.artist }}</td>
+                <td>
+                    <a href="/delete/{{record.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{record.id}}">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    
+    <div class="form">
+        <form action="/" method="POST">
+            Record Name:<input type="text" name="content" id="content" required placeholder="Record Name">
+            <br></br>
+            Artist<input type="text" name="artist" id="artist" required placeholder="Artist Name">
+            <br></br>
+            <input type="submit" value="Add Record">
+
+            <a href="/random/{{record}}">random record</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
