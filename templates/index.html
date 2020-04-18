@@ -15,10 +15,7 @@
     {% if records| length < 1 %}
     <h4 style="text-align: center">There are no records. create one below.</h4>
     {% else %}
-    <br></br>
-    <br></br>
     <h2 style="text-align: center" class="random">If you just want a random record:<br>{{ (records|random).content }}</h2>
-    <br></br>
     <table>
         <tr>
             <th>Record</th>

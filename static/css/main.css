@@ -17,6 +17,9 @@ p {
 
 .random {
     color: rgba(252, 207, 59, 0.699);
+    line-height: 120%;
+    margin-top: 7%;
+    margin-bottom: 2%;
 }
 
 table, td, th {
