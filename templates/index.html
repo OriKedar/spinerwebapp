@@ -11,13 +11,13 @@
 {% block body %}
 <div class="content">
     <h1 style="text-align: center">Record Master</h1>
-    <p>Welcome to the Record Master app, here you can choose and manage your records</p>
+    <p>Welcome to the Record Master App, here you can choose and manage your records.</p>
     {% if records| length < 1 %}
     <h4 style="text-align: center">There are no records. create one below.</h4>
     {% else %}
     <br></br>
     <br></br>
-    <h2 style="text-align: center" class="random">If you just want a random record: {{ (records|random).content }}</h2>
+    <h2 style="text-align: center" class="random">If you just want a random record:<br>{{ (records|random).content }}</h2>
     <br></br>
     <table>
         <tr>
