@@ -65,18 +65,5 @@ def update(id):
         return render_template('update.html', record=record)
 
 
-@app.route('/random/' , methods=['GET'])
-def random():
-    records = Records.query.all()
-    record_number = (records.count())
-    random_line = (random.randint(0,record_number))
-
-    return 'FucKKKKK'
-    #return records_list
-    #return
-
-
-
-
 if __name__ == "__main__":
     app.run(debug=True)
