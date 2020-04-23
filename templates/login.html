@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head%}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+</style> 
+<title>Records Master</title>
+{% endblock %}
+{% block body %}
+
+<div class="content">
+    <div class="login_form">
+        <h1>Welcome to the Record Master, please login</h1>
+        <br></br>
+        <form action="" method="POST">
+        <input type="text" placeholder="Username" name="username" value="{{
+          request.form.username }}">
+         <input type="password" placeholder="Password" name="password" value="{{
+          request.form.password }}">
+        <input type="submit" value="Login">
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}

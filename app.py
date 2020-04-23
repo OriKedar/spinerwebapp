@@ -17,7 +17,7 @@ class Records(db.Model):
     def __repr__(self):
         return '<Record %r>' % self.id
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/Home', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
         record_name = request.form['content']
@@ -28,7 +28,7 @@ def index():
         try:
             db.session.add(new_record)
             db.session.commit()
-            return redirect('/')
+            return redirect('/Home')
         except:
             return 'There was an isseu adding the new record'
 
@@ -44,7 +44,7 @@ def delete(id):
     try:
         db.session.delete(record_to_delete)
         db.session.commit()
-        return redirect('/')
+        return redirect('/Home')
     except:
         return 'There was a problem deleting that record'
 
@@ -58,12 +58,21 @@ def update(id):
 
         try:
             db.session.commit()
-            return redirect('/')
+            return redirect('/Home')
         except:
             return 'There was ana issue updatinig your record'
     else:
         return render_template('update.html', record=record)
 
+@app.route('/', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            error = 'Invalid Credentials. Please try again.'
+        else:
+            return redirect(url_for('index'))
+    return render_template('login.html', error=error)
 
 if __name__ == "__main__":
     app.run(debug=True)
