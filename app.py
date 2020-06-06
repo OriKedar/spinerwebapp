@@ -68,7 +68,7 @@ def update(id):
 def login():
     error = None
     if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+        if request.form['username'] != 'OriKedar' or request.form['password'] != 'records':
             error = 'Invalid Credentials. Please try again.'
         else:
             return redirect(url_for('index'))
