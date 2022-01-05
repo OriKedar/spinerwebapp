@@ -60,7 +60,7 @@ def update(id):
             db.session.commit()
             return redirect('/Home')
         except:
-            return 'There was ana issue updatinig your record'
+            return 'There was ana issue updating your record'
     else:
         return render_template('update.html', record=record)
 
